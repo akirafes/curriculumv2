@@ -1,0 +1,26 @@
+<div ng-class="visibleMsg">
+    <h4>Send me a message</h4>
+    <form class="" name="frmContact">
+        <div class="row">
+            <div class="col-md-4">
+                <input ng-class="{submitted:submitted}" type="text" required="" placeholder="name" data-ng-model="contactData.name">
+                <input ng-class="{submitted:submitted}" type="email" required="" placeholder="e-mail" data-ng-model="contactData.email">
+                <input type="url" id="website" placeholder="website" data-ng-model="contactData.website">
+            </div>
+            <div class="col-md-8">
+                <textarea ng-class="{submitted:submitted}" required="" placeholder="Message" rows="6" data-ng-model="contactData.comments"></textarea>
+                <button type="submit" data-ng-click="sendMsg()">Send Message</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div ng-class="invisibleMsg" style="text-align: center">
+    <img src="/images/contact.png" alt="Contact"/>
+    <h1>Thank You!</h1>
+    <h4>message sent successfully</h4>
+    <div style="padding-bottom: 50px;">You can also contact me via email: <a href="mailto:mail@fer.cc">mail@fer.cc</a><br>or through my mobile number: +52 (624) 12-745-05</div>
+</div>
+<div ng-class="loaderMsg">
+    <img alt="loading" src="images/loading.gif">
+</div>

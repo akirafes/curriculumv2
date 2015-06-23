@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" ng-app="resumeApp">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="web Developer, php, scrum, javascript, htm5, css3, laravel, angularjs, resume" />
+    <meta name="description" content="Fernando Espinosa Resume, PHP Web Developer">
+    <meta name="author" content="Fernando Espinosa">
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800,700italic,600italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Neuton:400,200,300' rel='stylesheet' type='text/css'>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- Theme Styles CSS-->
+    <link rel="stylesheet" href="styles/projects.css"/>
+    <link rel="stylesheet" href="styles/style.css" >
+    <link rel="stylesheet" href="styles/nivo-lightbox.css" />
+    <link rel="stylesheet" href="styles/default.css" />
+    <link rel="stylesheet" href="styles/animate.css" />
+    <!-- endbuild -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body  ng-controller="contResume as resume">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- LOADING MASK -->
+<div id="mask" data-ng-show="resume.appData == null">
+    <div class="loader">
+        <img src="images/loading.gif" alt='loading'>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div data-ng-hide="resume.appData == null" class="main-content">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-md-3 l-content">
+                <div class="profile-pic">
+                    <div class="pic-bg"><img src="images/profile-avatar.png" class="img-responsive" alt=""/></div>
+                </div>
+                <nav>
+                    <ul class="navigation">
+                        <li data-ng-class="resume.isActive(section.name)" data-ng-repeat="section in resume.appData.sections"><a data-ng-href="{{section.url}}">{{section.name}} <i data-ng-class="section.icon"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-9 r-content">
+
+
+                <section  ng-view></section>
+
+
+
+                <!-- FOOTER -->
+
+                <footer info="resume.appData.footer"></footer>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MAIN CONTENT -->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+            r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+    }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54397405-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/flexslider/jquery.flexslider.js"></script>
+<script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/directives/footer.js"></script>
+<script src="scripts/directives/resumeinfo.js"></script>
+<script src="scripts/directives/contactform.js"></script>
+<script src="scripts/directives/resumelist.js"></script>
+<script src="scripts/directives/fesskills.js"></script>
+<script src="scripts/controllers/contresume.js"></script>
+<script src="scripts/services/dataresume.js"></script>
+<script src="scripts/controllers/principal.js"></script>
+<script src="scripts/services/sections.js"></script>
+<!-- endbuild -->
+</body>
+</html>

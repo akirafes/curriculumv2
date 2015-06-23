@@ -1,0 +1,21 @@
+<div class="item resume" id="3">
+    <div class="page-head animated fadeInDown">
+        <div class="row">
+ <div class="col-lg-12" style="text-align: right"><a data-ng-click="resume.changeLan('es',principal)" class="link" data-ng-class="resume.checkLanguage('es')"><img src="/images/mex.png"/> Versión Español</a> <a class="link" data-ng-class="resume.checkLanguage('en')" data-ng-click="resume.changeLan('en',principal)"><img src="/images/usa.png"/> English Version</a></div>
+            <div class="col-md-5">
+                <h3>{{principal.section.title}}</h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="view view-fifth" ng-animate="'animate'" data-ng-repeat="project in principal.section.projects" style="background-image: url('{{project.image}}'); background-size: cover; background-position: top left">
+        <img data-ng-src="{{project.image}}">
+        <div class="mask">
+            <h2>{{project.title}}</h2>
+            <p><i class="fa fa-file-o"></i> {{project.resume}}</p>
+            <p class="tag"><i class="fa fa-tags"></i> {{project.tags}}</p>
+            <a class="info" href="/#/projects/{{project.id}}">{{project.boton}}</a>
+        </div>
+    </div>
+
+</div>

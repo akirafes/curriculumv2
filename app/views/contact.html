@@ -1,0 +1,48 @@
+<style>.angular-google-map-container { height: 400px; }</style>
+    <div class="item contact" id="5">
+        <div class="page-head">
+            <div class="row">
+                <div class="col-lg-12" style="text-align: right"><a data-ng-click="resume.changeLan('es',principal)" class="link" data-ng-class="resume.checkLanguage('es')"><img src="/images/mex.png"/> Versión Español</a> <a class="link" data-ng-class="resume.checkLanguage('en')" data-ng-click="resume.changeLan('en',principal)"><img src="/images/usa.png"/> English Version</a></div>
+                <div class="col-md-5">
+                    <h3>{{resume.appData.profile.labels.contect}}</h3>
+                </div>
+                <div class="col-md-7">
+                    <div class="np-main">
+                        <p>{{appData.profile.labels.goto}}</p>
+                        <div class="np-controls">
+                            <a href="#" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
+                            <a href="#" class="next"><i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <div class="gmap">
+                <google-map class="col-md-12"
+                            center="principal.map.center"
+                            zoom="principal.map.zoom"
+                            dragging="principal.map.dragging"
+                            draggable="true"
+                            control="principal.map.control">
+                    <!--<marker ng-repeat="m in map.markers2" coords="m" icon="m.icon" fit='true' events="markersEvents" idkey="m.id">-->
+                    <!--</marker>-->
+
+                    <markers models="principal.map.dynamicMarkers" coords="'self'" icon="'icon'" click="'onClicked'" fit='true' events="markersEvents">
+
+                    </markers>
+                </google-map>
+            </div>
+        </div>
+        <div class="contact-info">
+           <h4 style="padding-top: 15px;">{{resume.appData.profile.labels.contactInfo}}</h4>
+            <p>{{resume.appData.profile.labels.contactText}}</p>
+            <ul>
+                <li><i class="fa fa-home"></i> San Jose del Cabo, Mexico</li>
+                <li><i class="fa fa-phone"></i> +52 (624) 127 4505</li>
+                <li><i class="fa fa-envelope"></i> mail@fer.cc</li>
+            </ul>
+        </div>
+        <div class="contact-form" contact-data="contact"></div>
+        <div class="col-lg-12" style="text-align: right"><a data-ng-click="resume.changeLan('es',principal)" class="link" data-ng-class="checkLanguage('es')"><img src="/images/mex.png"/> Versión Español</a> <a class="link" data-ng-class="checkLanguage('en')" data-ng-click="resume.changeLan('en',principal)"><img src="/images/usa.png"/> English Version</a></div>
+    </div>

@@ -1,0 +1,29 @@
+<!-- SECTION 3 - CV / RESUME -->
+    <div class="item resume" id="3">
+        <div class="page-head animated fadeInDown">
+            <div class="row">
+                <div class="col-lg-12" style="text-align: right"><a data-ng-click="resume.changeLan('es',principal)" class="link" data-ng-class="resume.checkLanguage('es')"><img src="/images/mex.png"/> Versión Español</a> <a class="link" data-ng-class="resume.checkLanguage('en')" data-ng-click="resume.changeLan('en',principal)"><img src="/images/usa.png"/> English Version</a></div>
+                <div class="col-md-5">
+                    <h3>{{principal.section.title}}</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="resume-info animated slideInLeft" info="principal.section.sub"></div>
+        <div style="display: block; width: 100%; clear: both"></div>
+        <div class="skills-info" style="border-bottom: none;" data-ng-repeat-start="skillTitles in section.skillTitles">
+            <h4>{{getSkill(skillTitles,'title')}}</h4>
+            <div class="sep2"></div>
+            <ul >
+                <li fes-Skills skill="skill" style="border: none;" data-ng-repeat="skill in getSkill(skillTitles,'list')" class="col-sm-6"></li>
+            </ul>
+        </div>
+        <div data-ng-repeat-end style="display: block; width: 100%; clear: both"></div>
+
+
+        <!-- <div class="resume-info" info="section.job"></div> -->
+        <div style="display: block; width: 100%; clear: both"></div>
+        <div class="col-lg-12" style="text-align: right"><a data-ng-click="resume.changeLan('es',principal)" class="link" data-ng-class="resume.checkLanguage('es')"><img src="/images/mex.png"/> Versión Español</a> <a class="link" data-ng-class="resume.checkLanguage('en')" data-ng-click="resume.changeLan('en',principal)"><img src="/images/usa.png"/> English Version</a></div>
+    </div>
+
+<!-- SECTION 3 - CV / RESUME -->
