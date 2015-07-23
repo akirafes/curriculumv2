@@ -28,5 +28,5 @@ angular.module('resumeApp')
             setLanguage : function(value){
                 obj.lan = value;
             }
-        }
+        };
   });

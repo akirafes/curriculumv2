@@ -17,6 +17,7 @@ angular.module('resumeApp')
         vm.section = null;
         vm.skills = ['back', 'front','CMS','other'];
         vm.isLoaded = false;
+        vm.viVar = 'hola Fercho';
 
         vm.getData = function(){
             dataResume.getSection($routeParams.page, sections.getLanguage(), function (results) {
@@ -48,7 +49,7 @@ angular.module('resumeApp')
 
 
         /* inicia maps */
-        vm.contact = {url:"/data/sendMail.php"};
+        vm.contact = {url:'/data/sendMail.php'};
         //google.maps.visualRefresh = true;
 
         angular.extend(vm, {
